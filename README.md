@@ -1,16 +1,40 @@
-# React + Vite
+# Dashboard de Videojuegos — Práctica de clase con React
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Práctica de clase hecha con **React 19**, **Vite** y **Bootstrap 5.3**. Su objetivo es practicar la separación en componentes, el paso de props y los hooks **useState** y **useEffect**.
 
-Currently, two official plugins are available:
+La app es un dashboard que muestra un catálogo de 12 videojuegos. Las tarjetas se pueden filtrar en tiempo real y la página puede cambiar entre tema claro y oscuro.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Qué se practica
 
-## React Compiler
+**Estructura modular**
+- Componentes reutilizables (`Navbar`, `Sidebar`, `MainContent`, `VideojuegoCard`, `Login`), comunicados entre sí por props.
+- Layout con el Grid de Bootstrap (`row` / `col-*`).
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+**useState**
+- Filtro en tiempo real por nombre, género, plataforma y puntuación mínima.
+- Botón para cambiar el tema entre claro y oscuro.
+- Sesión simulada con un token guardado en `localStorage`.
 
-## Expanding the Oxlint configuration
+**useEffect**
+- Petición simulada con `setTimeout` de 1.5 s. Mientras carga se muestra un spinner "Cargando...".
+- Aplicar el tema a toda la página (`data-bs-theme`) y recordarlo al recargar.
+- Actualizar el título de la pestaña con el número de resultados.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+## Estructura
+
+```
+src/
+├── App.jsx                  Layout y estado compartido (filtros, tema, sesión)
+├── components/
+│   ├── Navbar.jsx           Barra superior: tema y cerrar sesión
+│   ├── Sidebar.jsx          Panel de filtros
+│   ├── MainContent.jsx      Carga de datos, spinner y lista filtrada
+│   ├── VideojuegoCard.jsx   Tarjeta de un videojuego
+│   └── Login.jsx            Inicio de sesión simulado
+├── data/videojuegos.js      Datos de ejemplo
+└── services/api.js          Petición simulada obtenerVideojuegos()
+```
+
+---
+
+Universidad La Salle Chihuahua · Práctica de clase · Mario Raúl Jiménez Villegas
