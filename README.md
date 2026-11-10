@@ -37,4 +37,4 @@ src/
 
 ---
 
-Universidad La Salle Chihuahua · Práctica de clase · Mario Raúl Jiménez Villegas
+Universidad La Salle Chihuahua · Práctica de clase · Mario Jiménez
