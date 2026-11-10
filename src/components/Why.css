@@ -1,0 +1,18 @@
+/* Clases que el snippet usa pero que no vienen en Bootstrap 5 */
+
+.min-vh-25 { min-height: 25vh; }
+
+/* Margen negativo: sube la caja de texto para que se encime sobre la foto */
+.mb-n7 { margin-bottom: -6rem; }
+
+@media (min-width: 768px) {
+  .min-vh-md-50 { min-height: 50vh; }
+  .mt-md-n6 { margin-top: -4.5rem !important; }
+}
+
+/* Línea vertical junto a "WHY?" solo en pantallas grandes */
+@media (min-width: 992px) {
+  .border-lg-end {
+    border-right: var(--bs-border-width) var(--bs-border-style) var(--bs-border-color) !important;
+  }
+}
